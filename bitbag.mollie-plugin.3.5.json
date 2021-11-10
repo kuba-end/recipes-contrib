@@ -1,0 +1,56 @@
+{
+    "manifests": {
+        "bitbag/mollie-plugin": {
+            "manifest": {
+                "bundles": {
+                    "BitBag\\SyliusMolliePlugin\\BitBagSyliusMolliePlugin": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "copy-from-package": {
+                    "tests/Application/templates/bundles/SyliusAdminBundle/PaymentMethod/_api_live_key.html.twig": "templates/bundles/SyliusAdminBundle/PaymentMethod/_api_live_key.html.twig",
+                    "tests/Application/templates/bundles/SyliusAdminBundle/PaymentMethod/_api_test_key.html.twig": "templates/bundles/SyliusAdminBundle/PaymentMethod/_api_test_key.html.twig",
+                    "tests/Application/templates/bundles/SyliusAdminBundle/PaymentMethod/_mollieMessage.html.twig": "templates/bundles/SyliusAdminBundle/PaymentMethod/_mollieMessage.html.twig",
+                    "tests/Application/templates/bundles/SyliusAdminBundle/PaymentMethod/_mollieMethodsForm.html.twig": "templates/bundles/SyliusAdminBundle/PaymentMethod/_mollieMethodsForm.html.twig",
+                    "tests/Application/templates/bundles/SyliusAdminBundle/PaymentMethod/_versionNotification.html.twig": "templates/bundles/SyliusAdminBundle/PaymentMethod/_versionNotification.html.twig"
+                },
+                "container": {
+                    "images_dir": "/media/image/"
+                },
+                "post-install-output": [
+                    "  If you want to contact us, the best way is to fill the form on our website or send us an e-mail to <comment>hello@bitbag.io</comment> with your question(s).",
+                    "  We guarantee that we answer as soon as we can!"
+                ]
+            },
+            "files": {
+                "config/packages/bitbag_mollie_plugin.yaml": {
+                    "contents": [
+                        "imports:",
+                        "    - { resource: \"@BitBagSyliusMolliePlugin/Resources/config/config.yaml\" }",
+                        "",
+                        "winzou_state_machine:",
+                        "    sylius_order_checkout:",
+                        "        transitions:",
+                        "            complete:",
+                        "                from: [cart, addressed, shipping_selected, shipping_skipped, payment_selected, payment_skipped]",
+                        "                to: completed",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "config/routes/bitbag_mollie_plugin.yaml": {
+                    "contents": [
+                        "bitbag_sylius_mollie_plugin:",
+                        "    resource: \"@BitBagSyliusMolliePlugin/Resources/config/routing.yaml\"",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "cd5bad0e51cb2f8a7f0cd622f340139202f1f991"
+        }
+    }
+}
