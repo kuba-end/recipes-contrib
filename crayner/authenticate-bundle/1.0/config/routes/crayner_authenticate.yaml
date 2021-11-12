@@ -1,4 +1,4 @@
 crayner_authenticate:
-    resource: '@CraynerAuthenticateBundle/Resources/config/routes.yaml'
+    resource: '@CraynerAuthenticateBundle/Resources/config/bitbag_elasticsearch_plugin_routes.yaml'
     prefix: /security
 
