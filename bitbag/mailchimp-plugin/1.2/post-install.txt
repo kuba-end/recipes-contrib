@@ -14,7 +14,7 @@
 
 
 
-  * <fg=blue>Read</> the documentation at <comment>https://https://github.com/BitBagCommerce/SyliusMailChimpPlugin/tree/master/doc</>
+  * <fg=blue>Read</> the documentation at <comment>https://github.com/BitBagCommerce/SyliusMailChimpPlugin/tree/master/doc</>
 
 If you want to contact us, the best way is to fill the form on our website or send us an e-mail to <comment>hello@bitbag.io</comment> with your question(s).
   We guarantee that we answer as soon as we can!
