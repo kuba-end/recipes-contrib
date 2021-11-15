@@ -1,8 +1,5 @@
 {
     "bundles": {
-        "FOS\\ElasticaBundle\\FOSElasticaBundle": [
-            "all"
-        ],
         "BitBag\\SyliusElasticsearchPlugin\\BitBagSyliusElasticsearchPlugin": [
             "all"
         ]
